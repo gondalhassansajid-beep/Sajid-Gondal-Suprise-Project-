@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #f5cf72;
+  --gold-light: #fff0b5;
+  --black: #090909;
+  --panel: #15120c;
+  --text: #fff8e8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top, #30220b 0%, #100d08 40%, #050505 100%);
+  color: var(--text);
+  font-family: "Noto Nastaliq Urdu", serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+button,
+label {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.topbar {
+  position: relative;
+  z-index: 2;
+  padding: 15px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #806526;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 15px;
+}
+
+.music-btn {
+  background: #201909;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+  padding: 8px 13px;
+  font-size: 12px;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: auto;
+  padding: 15px;
+}
+
+.hero {
+  padding: 45px 15px 35px;
+  min-height: 580px;
+}
+
+.gold-ring {
+  width: 95px;
+  height: 95px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  margin: 10px auto 20px;
+  box-shadow:
+    0 0 20px #bd8e23,
+    inset 0 0 20px #795b20;
+  animation: glow 3s infinite alternate;
+}
+
+.small-title {
+  color: var(--gold-light);
+  font-size: 13px;
+}
+
+h1 {
+  color: var(--gold);
+  font-size: clamp(32px, 8vw, 58px);
+  font-weight: 700;
+  margin: 18px 0;
+  text-shadow: 0 0 15px #ad7d24;
+  animation: appear 1.5s ease;
+}
+
+.gold-line {
+  width: 130px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  margin: 20px auto;
+}
+
+h2 {
+  color: var(--gold-light);
+  font-size: clamp(20px, 5vw, 29px);
+  line-height: 2;
+}
+
+.intro {
+  max-width: 600px;
+  margin: 20px auto 28px;
+  line-height: 2.5;
+  font-size: 14px;
+  color: #e4d8bd;
+}
+
+.gold-button {
+  padding: 13px 23px;
+  border: 1px solid #fff0b5;
+  border-radius: 35px;
+  background: linear-gradient(135deg, #ffe8a0, #b47a16);
+  color: #211400;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 0 22px #a77a1f70;
+  transition: 0.3s;
+}
+
+.gold-button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 30px #f5cf72;
+}
+
+.surprise-box {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 25px 18px;
+  background: linear-gradient(145deg, #201808, #0e0c08);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  box-shadow: 0 0 35px #bd8e2340;
+  animation: reveal 0.8s ease;
+}
+
+.surprise-box p,
+.message-section p,
+.dua-section p {
+  font-size: 14px;
+  line-height: 2.7;
+  color: #eee2c8;
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  font-size: 48px;
+  animation: heartbeat 1.5s infinite;
+}
+
+.signature {
+  color: var(--gold) !important;
+  font-size: 22px !important;
+  font-weight: bold;
+}
+
+.dua {
+  color: var(--gold-light);
+  margin-top: 15px;
+}
+
+.message-section,
+.gallery-section,
+.dua-section,
+.final-section {
+  margin: 30px 0;
+  padding: 25px 18px;
+  border: 1px solid #8d6b28;
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(40, 29, 12, 0.9),
+    rgba(14, 12, 8, 0.95)
+  );
+  box-shadow: 0 10px 35px #00000070;
+}
+
+.section-icon {
+  font-size: 35px;
+}
+
+.message-section p {
+  text-align: center;
+}
+
+.gallery-description {
+  color: #dfd0af;
+  font-size: 13px;
+  line-height: 2.5;
+}
+
+.upload-button {
+  display: inline-block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  color: #1c1304;
+  background: var(--gold);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 13px;
+  border: 1px solid var(--gold);
+  animation: appear 0.6s ease;
+}
+
+.empty-gallery {
+  grid-column: 1 / -1;
+  color: #d9bd79;
+  padding: 25px 5px;
+  border: 1px dashed #9d7b37;
+  border-radius: 12px;
+  line-height: 2.5;
+}
+
+.photo-note {
+  color: #b9a985;
+  font-size: 11px;
+  line-height: 2.2;
+}
+
+.arabic {
+  direction: rtl;
+  color: var(--gold-light) !important;
+  font-size: 22px !important;
+  line-height: 2.4 !important;
+}
+
+.final-section {
+  padding: 35px 15px;
+}
+
+.final-section p {
+  line-height: 2.5;
+  color: #e4d8bd;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #765a24;
+  padding: 25px 10px;
+  color: var(--gold);
+  font-size: 12px;
+  line-height: 2.5;
+  background: #080705;
+}
+
+.footer-small {
+  color: #b9a985;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #bd8e23;
+  }
+
+  to {
+    box-shadow: 0 0 35px #f5cf72;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 30px;
+  }
+
+  .gallery img {
+    height: 140px;
+  }
+
+  .message-section,
+  .gallery-section,
+  .dua-section,
+  .final-section {
+    padding: 20px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
